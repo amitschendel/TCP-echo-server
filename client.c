@@ -6,6 +6,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #define PORT 31337
+#define IP "127.0.0.1"
 
 int main(){
 
@@ -21,7 +22,7 @@ int main(){
     //define the address structure
     struct sockaddr_in server_address;
     server_address.sin_family = AF_INET;
-    server_address.sin_addr.s_addr = inet_addr( "{your own ip address}" );
+    server_address.sin_addr.s_addr = inet_addr( IP );
     server_address.sin_port = htons( PORT );
     socklen_t addrlen = sizeof(server_address);
 
